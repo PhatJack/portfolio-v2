@@ -6,7 +6,7 @@ import demo4 from '../../assets/demo4.jpg'
 
 const Project = () => {
 	return (
-		<div id="project" className="container">
+		<div id="project" className="wrap-container">
 			<h1 className="h1-text-custom">Projects</h1>
 			<p className="text-center py-8">
 				Deserunt in deserunt qui ad. Excepteur do aliquip ipsum consequat ex deserunt laborum ad ad tempor velit qui do. Duis cupidatat laboris ex veniam laborum amet tempor anim mollit dolor ex consequat enim sunt. Voluptate est incididunt eu cupidatat cillum ut ea qui dolor.

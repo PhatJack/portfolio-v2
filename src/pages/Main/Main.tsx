@@ -1,5 +1,8 @@
 import { TypeAnimation } from "react-type-animation"
 import { FaFacebook, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { BiMailSend } from 'react-icons/bi'
+import { AiOutlinePhone } from "react-icons/ai"
+
 const Main = () => {
 	return (
 		<div id="main">
@@ -32,6 +35,16 @@ const Main = () => {
 						<FaInstagram size={20} className="cursor-pointer" />
 						<FaGithub size={20} className="cursor-pointer" />
 						<FaLinkedin size={20} className="cursor-pointer" />
+					</div>
+					<div className="flex justify-between items-start flex-col my-4">
+						<div className="flex justify-center items-center gap-2 bg-[#001b5e] text-white px-5 py-3 my-2 rounded-lg hover:bg-[#001b5e]/80 transition-all ">
+							<a href="mailto:tienphatng.693@gmail.com"><BiMailSend size={22} /></a>
+							<a href="mailto:tienphatng.693@gmail.com" className="text-md">tienphatng.693@gmail.com</a>
+						</div>
+						<div className="flex justify-center items-center gap-2 bg-[#001b5e] text-white px-5 py-3 my-2 rounded-lg hover:bg-[#001b5e]/80 transition-all ">
+							<a href="tel:+84344248396"><AiOutlinePhone size={22} /> </a>
+							<a href="tel:+84344248396" className="text-md">(+84) 0344248396</a>
+						</div>
 					</div>
 				</div>
 
