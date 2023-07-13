@@ -1,6 +1,6 @@
 
 
-const EducationItem = ({ year, title, duration, details }: { year: String, title: String, duration: String, details: String }) => {
+const EducationItem = ({ year, title, duration, details }: { year: string, title: string, duration: string, details: string }) => {
 	return (
 		<ol className="flex flex-col md:flex-row relative border-l border-stone-200">
 			<li className="mb-10 ml-4 ">

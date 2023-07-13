@@ -29,8 +29,8 @@ const data = [
 
 const Education = () => {
 	return (
-		<div id="education" className="max-w-[1040px] m-auto md:pl-20 p-4 py-16">
-			<h1 className="text-4xl font-bold text-left text-[#001b5e] mb-8">Education & Experience</h1>
+		<div id="education" className="container">
+			<h1 className="h1-text-custom">Education & Experience</h1>
 			{data.map((item, index) => (
 				<EducationItem key={index} year={item.year} title={item.title} duration={item.duration} details={item.detail} />
 			))}

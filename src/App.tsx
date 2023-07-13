@@ -1,7 +1,8 @@
-import Education from './components/Education/Education'
-import Header from './components/Header/Header'
-import Main from './components/Main/Main'
-import Project from './components/Project/Project'
+import Contact from './pages/Contact/Contact'
+import Education from './pages/Education/Education'
+import Header from './pages/Header/Header'
+import Main from './pages/Main/Main'
+import Project from './pages/Project/Project'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
 			<Main></Main>
 			<Education />
 			<Project />
+			<Contact />
 		</>
 	)
 }
