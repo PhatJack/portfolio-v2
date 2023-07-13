@@ -7,24 +7,24 @@ const data = [
 		duration: "4.5 Years",
 		detail: "Excepteur excepteur mollit nisi ex laborum nostrud voluptate.Exercitation id nisi et do quis proident mollit est minim nostrud aliqua sunt."
 	},
-	{
-		year: "2021-Present",
-		title: 'SGU University',
-		duration: "4.5 Years",
-		detail: "Excepteur excepteur mollit nisi ex laborum nostrud voluptate.Excepteur culpa dolor ea adipisicing cupidatat ut."
-	},
-	{
-		year: "2021-Present",
-		title: 'SGU University',
-		duration: "4.5 Years",
-		detail: "Excepteur excepteur mollit nisi ex laborum nostrud voluptate.Irure veniam fugiat aliquip id eiusmod aliquip enim dolore labore elit cupidatat esse."
-	},
-	{
-		year: "2021-Present",
-		title: 'SGU University',
-		duration: "4.5 Years",
-		detail: "Excepteur excepteur mollit nisi ex laborum nostrud voluptate.Eiusmod dolore ex eu cupidatat in pariatur cillum."
-	},
+	// {
+	// 	year: "2021-Present",
+	// 	title: 'SGU University',
+	// 	duration: "4.5 Years",
+	// 	detail: "Excepteur excepteur mollit nisi ex laborum nostrud voluptate.Excepteur culpa dolor ea adipisicing cupidatat ut."
+	// },
+	// {
+	// 	year: "2021-Present",
+	// 	title: 'SGU University',
+	// 	duration: "4.5 Years",
+	// 	detail: "Excepteur excepteur mollit nisi ex laborum nostrud voluptate.Irure veniam fugiat aliquip id eiusmod aliquip enim dolore labore elit cupidatat esse."
+	// },
+	// {
+	// 	year: "2021-Present",
+	// 	title: 'SGU University',
+	// 	duration: "4.5 Years",
+	// 	detail: "Excepteur excepteur mollit nisi ex laborum nostrud voluptate.Eiusmod dolore ex eu cupidatat in pariatur cillum."
+	// },
 ]
 
 const Education = () => {

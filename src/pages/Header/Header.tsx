@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { AiOutlineHome, AiOutlineMail, AiOutlineMenu, AiOutlineUser } from 'react-icons/ai'
+import { AiOutlineHome, AiOutlineMail, AiOutlineMenu, AiOutlineUser, AiOutlineClose } from 'react-icons/ai'
 import { BsBriefcase, BsColumnsGap } from 'react-icons/bs'
 import { GrCircleInformation } from 'react-icons/gr'
 import Tooltip from "../../components/Tooltip/Tooltip"
@@ -38,7 +38,13 @@ const Header = () => {
 	]
 	return (
 		<div>
-			<AiOutlineMenu onClick={handleNav} className="absolute top-4 right-4 z-[99] md:hidden" />
+			<div className="fixed top-2 right-2 z-[99] md:hidden w-10 h-10 bg-gray-100 rounded-full shadow-xl">
+				{!nav ?
+					<AiOutlineMenu size={25} onClick={handleNav} className="fixed top-4 right-4 z-[99] md:hidden cursor-pointer" />
+					:
+					<AiOutlineClose size={25} onClick={handleNav} className="fixed top-4 right-4 z-[99] md:hidden cursor-pointer" />
+				}
+			</div>
 			{
 				nav ? (
 					<div className="fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20">

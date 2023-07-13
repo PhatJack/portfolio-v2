@@ -31,12 +31,12 @@ const Main = () => {
 						/>
 					</h2>
 					<div className="flex justify-between pt-6 max-w-[200px] w-full">
-						<FaFacebook size={20} className="cursor-pointer" />
-						<FaInstagram size={20} className="cursor-pointer" />
-						<FaGithub size={20} className="cursor-pointer" />
-						<FaLinkedin size={20} className="cursor-pointer" />
+						<FaFacebook size={20} className="cursor-pointer hover:text-blue-600 transition-all" />
+						<FaInstagram size={20} className="cursor-pointer hover:text-pink-600 transition-all" />
+						<FaGithub size={20} className="cursor-pointer hover:text-gray-700 transition-all" />
+						<FaLinkedin size={20} className="cursor-pointer hover:text-blue-500 transition-all" />
 					</div>
-					<div className="flex justify-between items-start flex-col my-4">
+					<div className="flex justify-between md:items-start items-center flex-col my-4">
 						<div className="flex justify-center items-center gap-2 bg-[#001b5e] text-white px-5 py-3 my-2 rounded-lg hover:bg-[#001b5e]/80 transition-all ">
 							<a href="mailto:tienphatng.693@gmail.com"><BiMailSend size={22} /></a>
 							<a href="mailto:tienphatng.693@gmail.com" className="text-md">tienphatng.693@gmail.com</a>

@@ -1,15 +1,18 @@
 import avatar from '../../assets/avatar.jpg'
-
 const About = () => {
+	const isMobile = window.innerWidth >= 920;
+
 	return (
 		<div className="wrap-container" id='about'>
 			<h1 className="h1-text-custom">About Me</h1>
-			<div className="flex gap-20">
+			<div className="flex lg:gap-20 md:gap-14 gap-8 justify-between items-center lg:flex-row flex-col">
 				<div className="shadow-custom border-gray-200 overflow-hidden border-[8px]">
-					<img src={avatar} alt="" className='w-full h-full object-contain' />
+					<img src={avatar} alt="" className='w-full h-full object-cover' />
 				</div>
 				<div className="flex flex-col gap-10">
-					<strong className='text-5xl leading-tight'>Hello I'm <br /> Jack Phat</strong>
+					<strong className={`text-5xl leading-tight text-center lg:text-left ${isMobile ? 'break-words' : ''} lg:w-64 w-full`}>
+						Hello I'm Jack Phat
+					</strong>
 					<p className='text-lg tracking-wide font-medium text-gray-500'>
 						From a modest beginning, I embraced design with passion and relentless dedication. Despite a slower start, I pushed myself to work harder, continuously striving for improvement.
 					</p>
@@ -22,4 +25,4 @@ const About = () => {
 	)
 }
 
-export default About
+export default About;
