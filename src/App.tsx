@@ -4,6 +4,7 @@ import Education from './pages/Education/Education'
 import Header from './pages/Header/Header'
 import Main from './pages/Main/Main'
 import Project from './pages/Project/Project'
+import Resume from './pages/Resume/Resume'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 			<About />
 			<Education />
 			<Project />
+			<Resume />	
 			<Contact />
 		</>
 	)

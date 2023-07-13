@@ -6,6 +6,13 @@
 	scroll-behavior: smooth;
 }
 
+.react-pdf__Page__textContent {
+	display: none;
+}
+.react-pdf__Page__annotations{
+	display: none;
+}
+
 @layer components {
 	.wrap-container {
 		@apply max-w-[1040px] m-auto md:pl-20 p-4 py-16
