@@ -1,6 +1,7 @@
 import pdf from '../../assets/cv.pdf'
 import { useState, useEffect } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import AOS from 'aos'
 import "aos/dist/aos.css";
 
@@ -26,8 +27,8 @@ const Resume = () => {
 			<div data-aos="fade-up"
 				data-aos-easing="ease-in"
 				data-aos-duration="1000">
-				<Document file={pdf} className="flex justify-center items-center">
-					<Page pageNumber={1} scale={width > 920 ? 1.6 : 1.1} />
+				<Document file={pdf} className="justify-center items-center lg:flex hidden">
+					<Page pageNumber={1} scale={width > 920 ? 1.6 : 1.1} renderTextLayer={false} />
 				</Document>
 			</div>
 			<div className="flex justify-center items-center my-8"

@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react"
 
-const Tooltip = ({ children,text }: { children: ReactNode,text: string }) => {
+const Tooltip = ({ children,text }: { children: ReactNode , text: string }) => {
 
 	const [isVisible, setIsVisible] = useState(false);
 
