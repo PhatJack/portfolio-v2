@@ -1,3 +1,4 @@
+
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
 import Education from './pages/Education/Education'
@@ -7,7 +8,6 @@ import Project from './pages/Project/Project'
 import Resume from './pages/Resume/Resume'
 
 function App() {
-
 	return (
 		<>
 			<Header></Header>
@@ -15,7 +15,7 @@ function App() {
 			<About />
 			<Education />
 			<Project />
-			<Resume />	
+			<Resume />
 			<Contact />
 		</>
 	)
