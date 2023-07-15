@@ -14,25 +14,43 @@ const Project = () => {
 		AOS.init();
 	}, []);
 
+	const items = [
+		{
+			img: demo,
+			title: "The Leafy Liberties",
+			languages: "HTML, Tailwind CSS, MySQL, Docker and Javascript"
+		},
+		{
+			img: demo2,
+			title: "Student Management System",
+			languages: "java, MySQL and Java Swing"
+		},
+		{
+			img: demo3,
+			title: "5 Legends Barber",
+			languages: "HTML, CSS and Javascript"
+		},
+		{
+			img: demo4,
+			title: "Skateboard Shopping",
+			languages: "ReactJS, Tailwind CSS, Docker"
+		}
+	]
+
 	return (
 		<div id="project" className="wrap-container">
 			<h1 className="h1-text-custom"
 				data-aos="fade-up"
 				data-aos-easing="linear"
 				data-aos-duration="500">Projects</h1>
-			<p className="text-center py-8"
-				data-aos="fade-up"
-				data-aos-easing="linear"
-				data-aos-duration="800"
-			>
-				Deserunt in deserunt qui ad. Excepteur do aliquip ipsum consequat ex deserunt laborum ad ad tempor velit qui do. Duis cupidatat laboris ex veniam laborum amet tempor anim mollit dolor ex consequat enim sunt. Voluptate est incididunt eu cupidatat cillum ut ea qui dolor.
-				Ipsum magna laboris sit pariatur eiusmod ea eant laborum in voluptate. Reprehenderit ullamco veniam. Eu sunt adipisicing consequat est exercitation occaecat deserunt est laboris labore amet. In commodo irure labore commodo ullamco consequat ea voluptate sit laboris ad reprehenderit duis. Aute deserunt fugia.
-			</p>
 			<div className="grid sm:grid-cols-2 gap-12">
-				<ProjectItem img={demo} title={"E-commerce website Design"} />
-				<ProjectItem img={demo2} title={"Different Version of Instagram"} />
-				<ProjectItem img={demo3} title={"Women Collections"} />
-				<ProjectItem img={demo4} title={"Skateboard Shopping"} />
+				{items.map((item,index) => (
+					<ProjectItem img={item.img} title={item.title} language={item.languages} key={index} />
+				))}
+				{/* <ProjectItem img={demo} title={"The Leafy Liberties"} language={""} />
+				<ProjectItem img={demo2} title={"Student Management System"} language={""} />
+				<ProjectItem img={demo3} title={"4 Legends Barber"} language={""} />
+				<ProjectItem img={demo4} title={"Skateboard Shopping"} language={""} /> */}
 			</div>
 		</div>
 	)
