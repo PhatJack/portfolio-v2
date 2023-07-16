@@ -18,7 +18,7 @@ const About = () => {
 			<h1 className="h1-text-custom" data-aos="fade-up" data-aos-easing="linear"
 				data-aos-duration="500">About Me</h1>
 			<div className="flex lg:gap-20 md:gap-14 gap-8 justify-between items-center lg:flex-row flex-col">
-				<div className="shadow-custom border-gray-200 overflow-hidden border-[8px]" data-aos="fade-up" data-aos-easing="linear"
+				<div className="shadow-custom border-gray-200 overflow-hidden border-[8px] dark:shadow-lg dark:shadow-white" data-aos="fade-up" data-aos-easing="linear"
 					data-aos-duration="800">
 					<img src={avatar} alt="" className='w-full h-full object-cover' />
 				</div>
@@ -26,7 +26,7 @@ const About = () => {
 					<strong
 						data-aos="fade-up" data-aos-easing="linear"
 						data-aos-duration="1200"
-						className={`text-5xl leading-tight text-center lg:text-left ${isMobile ? 'break-words' : ''} lg:w-64 w-full`}>
+						className={`text-5xl leading-tight text-center lg:text-left text-black dark:text-white ${isMobile ? 'break-words' : ''} lg:w-64 w-full`}>
 						Hello I'm Jack Phat
 					</strong>
 					<p

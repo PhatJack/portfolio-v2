@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-import { AiOutlineHome, AiOutlineMail, AiOutlineMenu, AiOutlineUser, AiOutlineClose, AiOutlineSetting } from 'react-icons/ai'
+import { AiOutlineHome, AiOutlineMail, AiOutlineMenu, AiOutlineUser, AiOutlineClose, AiOutlineSetting, AiOutlineInfoCircle } from 'react-icons/ai'
 import { BsBriefcase, BsColumnsGap } from 'react-icons/bs'
-import { GrCircleInformation } from 'react-icons/gr'
 import Tooltip from "../../components/Tooltip/Tooltip"
 import { BiMoon, BiSun } from "react-icons/bi"
 // import EducationItem from "../Education/EducationItem"
@@ -12,11 +11,36 @@ import { BiMoon, BiSun } from "react-icons/bi"
 const Header = () => {
 
 	const [nav, setNav] = useState(false);
+
+
+	//Toggle dark and light mode
+
+	const [theme, setTheme] = useState("light");
+
+	useEffect(() => {
+		if (theme == "dark") {
+			document.documentElement.classList.add("dark");
+		} else {
+			document.documentElement.classList.remove("dark");
+
+		}
+		console.log(theme)
+	}, [theme]);
+
+	// const handleToggleSwitch = () => {
+	// 	setTheme(theme === "dark" ? "light" : "dark")
+	// 	console.log(theme);
+	// }
+
+	//Check setting visible
+
 	const [settingVisible, setSettingVisible] = useState(false);
 
 	const handleSettingVisible = () => {
 		setSettingVisible(!settingVisible);
 	}
+
+	//Change Color Theme
 
 	const [colorTheme, setColorTheme] = useState("primary");
 
@@ -25,6 +49,7 @@ const Header = () => {
 
 		if (currentThemeColor) {
 			setColorTheme(currentThemeColor);
+			console.log(colorTheme)
 		}
 	}, []);
 
@@ -38,7 +63,6 @@ const Header = () => {
 	const handleNav = () => {
 		setNav(!nav);
 	}
-	// console.log(colorTheme);
 	const menu = [
 		{
 			path: "main",
@@ -46,7 +70,7 @@ const Header = () => {
 		},
 		{
 			path: "about",
-			icon: GrCircleInformation
+			icon: AiOutlineInfoCircle
 		},
 		{
 			path: "education",
@@ -78,7 +102,8 @@ const Header = () => {
 				nav ? (
 					<div className="fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20 md:hidden">
 						{menu.map((item) => (
-							<a href={`#${item.path}`} className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200">
+							<a href={`#${item.path}`} className="w-[75%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200
+							dark:bg-black dark:text-white">
 								<item.icon size={20} />
 								<span className="pl-4 first-letter:uppercase">{`${item.path}`}</span>
 							</a>
@@ -89,13 +114,15 @@ const Header = () => {
 						<div className="flex flex-col ">
 							{menu.map((item, index) => (
 								<Tooltip text={item.path} key={index}>
-									<a href={`#${item.path}`} className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+									<a href={`#${item.path}`} className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300
+																		dark:bg-black dark:text-white">
 										<item.icon size={20} />
 									</a>
 								</Tooltip>
 							))}
 							<Tooltip text="Setting" key={6}>
-								<button onClick={handleSettingVisible} className="group rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300 hidden md:block hover:shadow-xl">
+								<button onClick={handleSettingVisible} className="group rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300 hidden md:block hover:shadow-xl
+																				dark:bg-black dark:text-white dark:shadow-white">
 									<AiOutlineSetting size={20} className="rotate-0 group-hover:rotate-[360deg] tcransition-all duration-1000" />
 								</button>
 							</Tooltip>
@@ -103,8 +130,8 @@ const Header = () => {
 					</div>
 				)
 			}
-			<div className={`w-full h-screen  md:block hidden fixed z-[10] bg-gray-300/40 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} onClick={handleSettingVisible}></div>
-			<div className={`bg-gray-800 md:block hidden w-[50%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
+			<div className={`w-full h-screen  md:block hidden fixed z-[10] bg-gray-300/40 dark:bg-white/60 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} onClick={handleSettingVisible}></div>
+			<div className={`bg-gray-800 dark:bg-black md:block hidden w-[50%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
 				<div className=" absolute top-5 right-5 text-white cursor-pointer">
 					<AiOutlineClose size={24} onClick={handleSettingVisible} className="hover:rotate-[360deg] duration-500 transition-all rotate-0" />
 				</div>
@@ -130,11 +157,15 @@ const Header = () => {
 					<div className="text-white my-8">
 						<h1 className="uppercase text-lg">Theme</h1>
 						<ul className="my-5 inline-flex gap-5">
-							<li className="hover:bg-blue-400 p-2 transition-all rounded-full">
-								<BiSun size={30} className="cursor-pointer rotate-0 transition-all duration-500 hover:rotate-[360deg]" />
+							<li>
+								<button className={`hover:bg-${theme == "light" ? "black" : "white"} p-2 transition-all rounded-full ${theme == "light" ? "bg-white text-black" : ""}`}>
+									<BiSun size={30} className={`cursor-pointer rotate-0 transition-all duration-500 hover:rotate-[360deg]`} onClick={() => setTheme("light")} />
+								</button>
 							</li>
-							<li className="hover:bg-blue-400 p-2 transition-all rounded-full">
-								<BiMoon size={30} className="cursor-pointer rotate-0 transition-all duration-500 hover:rotate-[360deg]" />
+							<li>
+								<button className={`hover:bg-${theme == "dark" ? "white" : "black"} p-2 transition-all rounded-full ${theme == "dark" ? "bg-white text-black" : ""}`}>
+									<BiMoon size={30} className={`cursor-pointer rotate-0 transition-all duration-500 hover:rotate-[360deg]`} onClick={() => setTheme("dark")} />
+								</button>
 							</li>
 						</ul>
 

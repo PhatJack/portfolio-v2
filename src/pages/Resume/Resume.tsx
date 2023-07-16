@@ -36,7 +36,7 @@ const Resume = () => {
 				data-aos-easing="ease-in"
 				data-aos-duration="1400"
 			>
-				<a href={pdf} download className='px-5 py-2 border-2 border-primary text-primary rounded-md transition-all hover:bg-primary hover:text-white font-semibold '>
+				<a href={pdf} download className='px-5 py-2 border-2 border-primary text-primary rounded-md transition-all hover:bg-primary hover:text-white font-semibold dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black'>
 					Download CV
 				</a>
 			</div>

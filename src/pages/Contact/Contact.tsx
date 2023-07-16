@@ -27,7 +27,7 @@ const Contact = () => {
 						data-aos-duration="500"
 
 					>
-						<label className="uppercase text-sm py-2" htmlFor="">Name</label>
+						<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">Name</label>
 						<input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" name="name" />
 					</div>
 					<div className="flex flex-col py-2"
@@ -35,7 +35,7 @@ const Contact = () => {
 						data-aos-easing="linear"
 						data-aos-duration="500"
 					>
-						<label className="uppercase text-sm py-2" htmlFor="">
+						<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">
 							Phone Number
 						</label>
 						<input className="border-2 rounded-lg p-3 flex border-gray-300" type="tel" name="phone" />
@@ -46,7 +46,7 @@ const Contact = () => {
 					data-aos-easing="linear"
 					data-aos-duration="700"
 				>
-					<label className="uppercase text-sm py-2" htmlFor="">Email</label>
+					<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">Email</label>
 					<input className="border-2 rounded-lg p-3 flex border-gray-300" type="email" name="email" />
 				</div>
 				<div className="flex flex-col py-2"
@@ -54,7 +54,7 @@ const Contact = () => {
 					data-aos-easing="linear"
 					data-aos-duration="900"
 				>
-					<label className="uppercase text-sm py-2" htmlFor="">Subject</label>
+					<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">Subject</label>
 					<input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" name="subject" />
 				</div>
 				<div className="flex flex-col py-2"
@@ -63,14 +63,14 @@ const Contact = () => {
 					data-aos-duration="1100"
 
 				>
-					<label className="uppercase text-sm py-2" htmlFor="">Message</label>
+					<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">Message</label>
 					<textarea className="border-2 rounded-lg p-3 flex border-gray-300" rows={10} name="message"></textarea>
 				</div>
 				<button
 					data-aos="zoom-in-up"
 					data-aos-easing="linear"
 					data-aos-duration="500"
-					className="bg-[#001b5e] text-gray-100 mt-4 w-full p-4 mb-10 rounded-lg flex justify-center items-center gap-3 font-bold hover:bg-[#001b5e]/80 hover:-translate-y-1 transition-all">
+					className="bg-primary text-gray-100 mt-4 w-full p-4 mb-10 rounded-lg flex justify-center items-center gap-3 font-bold hover:bg-primary/80 hover:-translate-y-1 transition-all dark:bg-white dark:text-black dark:hover:-translate-y-1 dark:hover:bg-white/80">
 					<BiPaperPlane size={20} />
 					Send Message
 				</button>

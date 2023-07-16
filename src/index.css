@@ -16,7 +16,7 @@
 	}
 
 	.h1-text-custom {
-		@apply text-4xl font-bold text-center text-[#001b5e] mb-8
+		@apply text-4xl font-bold text-center text-[#001b5e] mb-8 dark:text-white
 	}
 
 	.flex-center {

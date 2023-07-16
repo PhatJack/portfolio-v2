@@ -9,7 +9,7 @@ import Resume from './pages/Resume/Resume'
 
 function App() {
 	return (
-		<>
+		<div className='bg-white dark:bg-black/90'>
 			<Header></Header>
 			<Main></Main>
 			<About />
@@ -17,7 +17,7 @@ function App() {
 			<Project />
 			<Resume />
 			<Contact />
-		</>
+		</div>
 	)
 }
 
