@@ -38,7 +38,7 @@ const Main = ({ themeColor }: { themeColor: string }) => {
 						<FaLinkedin size={20} className="cursor-pointer hover:text-blue-500 transition-all" />
 					</div>
 					<div className="flex justify-between md:items-start items-center flex-col my-4">
-						<div className={`flex justify-center items-center gap-2 bg-${themeColor} text-white px-5 py-3 my-2 rounded-lg hover:bg-${themeColor}/80 transition-all`}>
+						<div className={`flex justify-center items-center gap-2 bg-primary text-white px-5 py-3 my-2 rounded-lg hover:bg-primary/80 transition-all`}>
 							<a href="mailto:tienphatng.693@gmail.com"><BiMailSend size={22} /></a>
 							<a href="mailto:tienphatng.693@gmail.com" className="text-md">tienphatng.693@gmail.com</a>
 						</div>
