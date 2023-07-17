@@ -10,6 +10,18 @@
 	display: none;
 }
 
+@layer base {
+	:root {
+		--theme-primary: #001b5e;
+		--theme-red: #f31313;
+		--theme-blue: #14c5fd;
+		--theme-purple: #C084FC;
+		--theme-pink: #ff99cc;
+		--theme-green: #28e98c;
+		--theme-orange: #fe6f1d;
+	}
+}
+
 @layer components {
 	.wrap-container {
 		@apply max-w-[1040px] m-auto md:pl-20 p-4 py-16

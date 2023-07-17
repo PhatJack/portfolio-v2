@@ -7,13 +7,13 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				"primary": "#001b5e",
-				"theme-blue": "#14c5fd",
-				"theme-red": "#f31313",
-				"theme-green": "#28e98c",
-				"theme-orange": "#fe6f1d",
-				"theme-purple": "#C084FC",
-				"theme-pink": "#ff99cc"
+				"primary": "var(--theme-primary)",
+				"theme-blue": "var(--theme-blue)",
+				"theme-red": "var(--theme-red)",
+				"theme-green": "var(--theme-green)",
+				"theme-orange": "var(--theme-orange)",
+				"theme-purple": "var(--theme-purple)",
+				"theme-pink": "var(--theme-pink)"
 			},
 		},
 	},

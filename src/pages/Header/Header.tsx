@@ -4,7 +4,7 @@ import { BsBriefcase, BsColumnsGap } from 'react-icons/bs'
 import Tooltip from "../../components/Tooltip/Tooltip"
 import { BiMoon, BiSun } from "react-icons/bi"
 // import EducationItem from "../Education/EducationItem"
-// import Main from "../Main/Main"
+import Main from "../Main/Main"
 
 
 
@@ -27,10 +27,6 @@ const Header = () => {
 		console.log(theme)
 	}, [theme]);
 
-	// const handleToggleSwitch = () => {
-	// 	setTheme(theme === "dark" ? "light" : "dark")
-	// 	console.log(theme);
-	// }
 
 	//Check setting visible
 
@@ -90,7 +86,6 @@ const Header = () => {
 	]
 	return (
 		<div>
-
 			<div className="fixed top-2 right-2 z-[99] md:hidden w-10 h-10 bg-gray-100 rounded-full shadow-xl cursor-pointer group">
 				{!nav ?
 					<AiOutlineMenu size={25} onClick={handleNav} className="fixed top-4 right-4 z-[99] md:hidden cursor-pointer" />
@@ -131,7 +126,7 @@ const Header = () => {
 				)
 			}
 			<div className={`w-full h-screen  md:block hidden fixed z-[10] bg-gray-300/40 dark:bg-white/60 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} onClick={handleSettingVisible}></div>
-			<div className={`bg-gray-800 dark:bg-black md:block hidden w-[50%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
+			<div className={`bg-gray-800 dark:bg-black md:block hidden w-[70%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
 				<div className=" absolute top-5 right-5 text-white cursor-pointer">
 					<AiOutlineClose size={24} onClick={handleSettingVisible} className="hover:rotate-[360deg] duration-500 transition-all rotate-0" />
 				</div>
@@ -158,12 +153,12 @@ const Header = () => {
 						<h1 className="uppercase text-lg">Theme</h1>
 						<ul className="my-5 inline-flex gap-5">
 							<li>
-								<button className={`hover:bg-${theme == "light" ? "black" : "white"} p-2 transition-all rounded-full ${theme == "light" ? "bg-white text-black" : ""}`}>
+								<button className={` p-2 transition-all rounded-full ${theme == "light" ? "bg-white text-black" : "hover:text-black hover:bg-white"}`}>
 									<BiSun size={30} className={`cursor-pointer rotate-0 transition-all duration-500 hover:rotate-[360deg]`} onClick={() => setTheme("light")} />
 								</button>
 							</li>
 							<li>
-								<button className={`hover:bg-${theme == "dark" ? "white" : "black"} p-2 transition-all rounded-full ${theme == "dark" ? "bg-white text-black" : ""}`}>
+								<button className={` p-2 transition-all rounded-full ${theme == "dark" ? "bg-white text-black " : "hover:text-white hover:bg-black"}`}>
 									<BiMoon size={30} className={`cursor-pointer rotate-0 transition-all duration-500 hover:rotate-[360deg]`} onClick={() => setTheme("dark")} />
 								</button>
 							</li>
