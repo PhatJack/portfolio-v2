@@ -4,7 +4,7 @@ import { BsBriefcase, BsColumnsGap } from 'react-icons/bs'
 import Tooltip from "../../components/Tooltip/Tooltip"
 import { BiMoon, BiSun } from "react-icons/bi"
 // import EducationItem from "../Education/EducationItem"
-import Main from "../Main/Main"
+// import Main from "../Main/Main"
 
 
 
@@ -85,7 +85,12 @@ const Header = () => {
 		}
 	]
 	return (
-		<div>
+		<div className="relative">
+			<div className="fixed md:top-8 top-0 left-0 z-10">
+				<button onClick={handleSettingVisible} className="m-2 p-4 bg-gray-100 shadow-custom rounded-lg">
+					<AiOutlineSetting size={22} className="animate-[spin_2s_linear_infinite]" />
+				</button>
+			</div>
 			<div className="fixed top-2 right-2 z-[99] md:hidden w-10 h-10 bg-gray-100 rounded-full shadow-xl cursor-pointer group">
 				{!nav ?
 					<AiOutlineMenu size={25} onClick={handleNav} className="fixed top-4 right-4 z-[99] md:hidden cursor-pointer" />
@@ -105,29 +110,24 @@ const Header = () => {
 						))}
 					</div>
 				) : (
+
 					<div className="md:block hidden fixed top-[25%] z-10">
 						<div className="flex flex-col ">
 							{menu.map((item, index) => (
 								<Tooltip text={item.path} key={index}>
-									<a href={`#${item.path}`} className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300
+									<a href={`#${item.path}`} className="rounded-full bg-gray-100 shadow-custom m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300
 																		dark:bg-black dark:text-white">
 										<item.icon size={20} />
 									</a>
 								</Tooltip>
 							))}
-							<Tooltip text="Setting" key={6}>
-								<button onClick={handleSettingVisible} className="group rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300 hidden md:block hover:shadow-xl
-																				dark:bg-black dark:text-white dark:shadow-white">
-									<AiOutlineSetting size={20} className="rotate-0 group-hover:rotate-[360deg] tcransition-all duration-1000" />
-								</button>
-							</Tooltip>
 						</div>
 					</div>
 				)
 			}
-			<div className={`w-full h-screen  md:block hidden fixed z-[10] bg-gray-300/40 dark:bg-white/60 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} onClick={handleSettingVisible}></div>
-			<div className={`bg-gray-800 dark:bg-black md:block hidden w-[70%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
-				<div className=" absolute top-5 right-5 text-white cursor-pointer">
+			<div className={`w-full h-screen fixed z-[10] bg-gray-300/40 dark:bg-white/60 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} onClick={handleSettingVisible}></div>
+			<div className={`bg-gray-800 dark:bg-black md:w-[70%] w-[85%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
+				<div className=" absolute md:top-5 top-20 right-5 text-white cursor-pointer">
 					<AiOutlineClose size={24} onClick={handleSettingVisible} className="hover:rotate-[360deg] duration-500 transition-all rotate-0" />
 				</div>
 				<div className="p-36">
