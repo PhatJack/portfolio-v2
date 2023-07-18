@@ -2,7 +2,7 @@ import avatar from '../../assets/avatar.jpg'
 import AOS from 'aos'
 import "aos/dist/aos.css";
 import { useEffect } from 'react'
-
+import { useThemeContext } from "../../hook/useThemeContext";
 
 const About = () => {
 
@@ -10,12 +10,13 @@ const About = () => {
 		AOS.init();
 	}, []);
 
+	const { themeColor } = useThemeContext();
 
 	const isMobile = window.innerWidth >= 920;
 
 	return (
 		<div className="wrap-container" id='about'>
-			<h1 className="h1-text-custom" data-aos="fade-up" data-aos-easing="linear"
+			<h1 className={`text-4xl font-bold text-center mb-8 dark:text-white text-${themeColor}`} data-aos="fade-up" data-aos-easing="linear"
 				data-aos-duration="500">About Me</h1>
 			<div className="flex lg:gap-20 md:gap-14 gap-8 justify-between items-center lg:flex-row flex-col">
 				<div className="shadow-custom border-gray-200 overflow-hidden border-[8px] dark:shadow-lg dark:shadow-white" data-aos="fade-up" data-aos-easing="linear"

@@ -2,6 +2,9 @@ import { BiPaperPlane } from 'react-icons/bi'
 import AOS from 'aos'
 import "aos/dist/aos.css";
 import { useEffect } from 'react'
+import { useThemeContext } from "../../hook/useThemeContext";
+
+
 
 const Contact = () => {
 
@@ -9,9 +12,11 @@ const Contact = () => {
 		AOS.init();
 	}, []);
 
+	const { themeColor } = useThemeContext();
+
 	return (
 		<div id="contact" className="wrap-container">
-			<h1 className="h1-text-custom"
+			<h1 className={`h1-text-custom text-${themeColor}`}
 				data-aos="fade-up"
 				data-aos-easing="linear"
 				data-aos-duration="500"
@@ -70,7 +75,7 @@ const Contact = () => {
 					data-aos="zoom-in-up"
 					data-aos-easing="linear"
 					data-aos-duration="500"
-					className="bg-primary text-gray-100 mt-4 w-full p-4 mb-10 rounded-lg flex justify-center items-center gap-3 font-bold hover:bg-primary/80 hover:-translate-y-1 transition-all dark:bg-white dark:text-black dark:hover:-translate-y-1 dark:hover:bg-white/80">
+					className={`bg-${themeColor} text-gray-100 mt-4 w-full p-4 mb-10 rounded-lg flex justify-center items-center gap-3 font-bold hover:bg-blue-900/80 hover:-translate-y-1 transition-all dark:bg-white dark:text-black dark:hover:-translate-y-1 dark:hover:bg-white/80`}>
 					<BiPaperPlane size={20} />
 					Send Message
 				</button>

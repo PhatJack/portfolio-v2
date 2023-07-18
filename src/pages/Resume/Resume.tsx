@@ -4,23 +4,28 @@ import { Document, Page, pdfjs } from 'react-pdf'
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import AOS from 'aos'
 import "aos/dist/aos.css";
+import { useThemeContext } from "../../hook/useThemeContext";
 
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 const Resume = () => {
 	const [width, setWidth] = useState(1200);
-
+	
+	
 	useEffect(() => {
 		setWidth(window.innerWidth);
 	}, []);
-
+	
 	useEffect(() => {
 		AOS.init();
 	}, []);
+	
+	const { themeColor } = useThemeContext();
+
 
 	return (
 		<div className="wrap-container" id="resume">
-			<h1 className="h1-text-custom"
+			<h1 className={`h1-text-custom text-${themeColor}`}
 				data-aos="fade-up"
 				data-aos-easing="linear"
 				data-aos-duration="500">Resume</h1>
@@ -36,7 +41,7 @@ const Resume = () => {
 				data-aos-easing="ease-in"
 				data-aos-duration="1400"
 			>
-				<a href={pdf} download className='px-5 py-2 border-2 border-primary text-primary rounded-md transition-all hover:bg-primary hover:text-white font-semibold dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black'>
+				<a href={pdf} download className={`px-5 py-2 border-2 border-${themeColor} text-${themeColor} rounded-md transition-all hover:bg-${themeColor} hover:text-white font-semibold dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black`}>
 					Download CV
 				</a>
 			</div>

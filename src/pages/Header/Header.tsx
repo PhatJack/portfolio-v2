@@ -3,6 +3,8 @@ import { AiOutlineHome, AiOutlineMail, AiOutlineMenu, AiOutlineUser, AiOutlineCl
 import { BsBriefcase, BsColumnsGap } from 'react-icons/bs'
 import Tooltip from "../../components/Tooltip/Tooltip"
 import { BiMoon, BiSun } from "react-icons/bi"
+import ThemeToggle from "../../components/ThemeToggle"
+import { useThemeContext } from "../../hook/useThemeContext"
 // import EducationItem from "../Education/EducationItem"
 // import Main from "../Main/Main"
 
@@ -11,7 +13,7 @@ import { BiMoon, BiSun } from "react-icons/bi"
 const Header = () => {
 
 	const [nav, setNav] = useState(false);
-
+	const { themeColor } = useThemeContext();
 
 	//Toggle dark and light mode
 
@@ -38,23 +40,23 @@ const Header = () => {
 
 	//Change Color Theme
 
-	const [colorTheme, setColorTheme] = useState("primary");
+	// const [colorTheme, setColorTheme] = useState("primary");
 
-	useEffect(() => {
-		const currentThemeColor = localStorage.getItem("theme-color");
+	// useEffect(() => {
+	// 	const currentThemeColor = localStorage.getItem("theme-color");
 
-		if (currentThemeColor) {
-			setColorTheme(currentThemeColor);
-			console.log(colorTheme)
-		}
-	}, []);
+	// 	if (currentThemeColor) {
+	// 		setColorTheme(currentThemeColor);
+	// 		console.log(colorTheme)
+	// 	}
+	// }, []);
 
-	const handleChangeColorTheme = (theme: string) => {
+	// const handleChangeColorTheme = (theme: string) => {
 
-		setColorTheme(theme);
-		localStorage.setItem("theme-color", theme);
+	// 	setColorTheme(theme);
+	// 	localStorage.setItem("theme-color", theme);
 
-	}
+	// }
 
 	const handleNav = () => {
 		setNav(!nav);
@@ -84,8 +86,9 @@ const Header = () => {
 			icon: AiOutlineMail
 		}
 	]
+	const colorBgTheme = ["bg-primary", "bg-theme-red", "bg-theme-blue", "bg-theme-green", "bg-theme-purple", "bg-theme-pink"]
 	return (
-		<div className="relative">
+		<div className={`relative ${themeColor === "light" ? "bg-white" : "bg-black"}`}>
 			<div className="fixed md:top-8 top-0 left-0 z-10">
 				<button onClick={handleSettingVisible} className="m-2 p-4 bg-gray-100 shadow-custom rounded-lg">
 					<AiOutlineSetting size={22} className="animate-[spin_2s_linear_infinite]" />
@@ -126,7 +129,7 @@ const Header = () => {
 				)
 			}
 			<div className={`w-full h-screen fixed z-[10] bg-gray-300/40 dark:bg-white/60 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} onClick={handleSettingVisible}></div>
-			<div className={`bg-gray-800 dark:bg-black md:w-[70%] w-[85%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
+			<div className={`bg-gray-800 dark:bg-black md:w-[40%] w-[85%] h-screen fixed z-[10] !visible transition-all bottom-0 duration-500 ${settingVisible ? 'right-0 opacity-100' : 'right-[-100%] opacity-0'}`} >
 				<div className=" absolute md:top-5 top-20 right-5 text-white cursor-pointer">
 					<AiOutlineClose size={24} onClick={handleSettingVisible} className="hover:rotate-[360deg] duration-500 transition-all rotate-0" />
 				</div>
@@ -135,18 +138,9 @@ const Header = () => {
 					<div className="text-white xl:w-1/2 w-full">
 						<h1 className="uppercase text-lg">Colors</h1>
 						<ul className="grid xl:grid-cols-6 grid-cols-3 my-7 ml-2 gap-5">
-							<li className="w-8 h-8 rounded-full bg-primary p-2 cursor-pointer hover:outline" onClick={() => handleChangeColorTheme("primary")}>
-							</li>
-							<li className="w-8 h-8 rounded-full bg-theme-red p-2 cursor-pointer hover:outline" onClick={() => handleChangeColorTheme("theme-red")}>
-							</li>
-							<li className="w-8 h-8 rounded-full bg-theme-blue p-2 cursor-pointer hover:outline" onClick={() => handleChangeColorTheme("theme-blue")}>
-							</li>
-							<li className="w-8 h-8 rounded-full bg-theme-green p-2 cursor-pointer hover:outline" onClick={() => handleChangeColorTheme("theme-green")}>
-							</li>
-							<li className="w-8 h-8 rounded-full bg-theme-pink p-2 cursor-pointer hover:outline" onClick={() => handleChangeColorTheme("theme-pink")}>
-							</li>
-							<li className="w-8 h-8 rounded-full bg-theme-purple p-2 cursor-pointer hover:outline" onClick={() => handleChangeColorTheme("theme-purple")}>
-							</li>
+							{colorBgTheme.map((item) => (
+								<ThemeToggle bgColor={item} text={item.slice(3)} />
+							))}
 						</ul>
 					</div>
 					<div className="text-white my-8">

@@ -8,7 +8,12 @@ import AOS from 'aos'
 import "aos/dist/aos.css";
 import { useEffect } from 'react'
 
+import { useThemeContext } from "../../hook/useThemeContext";
+
+
 const Project = () => {
+
+	const { themeColor } = useThemeContext();
 
 	useEffect(() => {
 		AOS.init();
@@ -39,12 +44,12 @@ const Project = () => {
 
 	return (
 		<div id="project" className="wrap-container">
-			<h1 className="h1-text-custom"
+			<h1 className={`h1-text-custom text-${themeColor}`}
 				data-aos="fade-up"
 				data-aos-easing="linear"
 				data-aos-duration="500">Projects</h1>
 			<div className="grid sm:grid-cols-2 gap-12">
-				{items.map((item,index) => (
+				{items.map((item, index) => (
 					<ProjectItem img={item.img} title={item.title} language={item.languages} key={index} />
 				))}
 				{/* <ProjectItem img={demo} title={"The Leafy Liberties"} language={""} />

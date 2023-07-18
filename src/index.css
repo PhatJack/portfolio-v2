@@ -28,7 +28,7 @@
 	}
 
 	.h1-text-custom {
-		@apply text-4xl font-bold text-center text-[#001b5e] mb-8 dark:text-white
+		@apply text-4xl font-bold text-center mb-8 dark:text-white
 	}
 
 	.flex-center {
@@ -41,6 +41,9 @@
 
 	.tool-tip-arrow {
 		@apply absolute w-3 h-3 bg-[#001b5e] top-[30%] -left-[15%] clip-path-triangle
+	}
+	.color-theme {
+		@apply p-2 cursor-pointer hover:outline w-8 h-8 rounded-full
 	}
 }
 

@@ -2,6 +2,9 @@ import EducationItem from "./EducationItem"
 import AOS from 'aos'
 import "aos/dist/aos.css";
 import { useEffect } from 'react'
+
+import { useThemeContext } from "../../hook/useThemeContext";
+
 const data = [
 	{
 		year: "2021-Present",
@@ -35,10 +38,12 @@ const Education = () => {
 		AOS.init();
 	}, []);
 
+	const { themeColor } = useThemeContext();
+
 	return (
 		<div id="education" className="wrap-container">
 			<h1
-				className="h1-text-custom"
+				className={`h1-text-custom text-${themeColor}`}
 				data-aos="fade-up" data-aos-easing="linear"
 				data-aos-duration="500">Education & Experience</h1>
 			{data.map((item, index) => (

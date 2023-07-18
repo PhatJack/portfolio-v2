@@ -2,8 +2,12 @@ import { TypeAnimation } from "react-type-animation"
 import { FaFacebook, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 import { AiOutlinePhone } from "react-icons/ai"
+import { useThemeContext } from "../../hook/useThemeContext";
 
 const Main = () => {
+	
+	const { themeColor } = useThemeContext();
+
 	return (
 		<div id="main">
 			<img className="w-full h-screen object-cover object-left scale-x-[-1]" src="https://th.bing.com/th/id/R.5fadd8137fc4225e1bc3616fdc34ec17?rik=EDQLeKatd8oYaw&riu=http%3a%2f%2fi.imgur.com%2fcfpKaL8.jpg%3f1&ehk=MkW3eQqbrFDlwZrDbxyqLqmTtz35wu7IDuvNe%2fvOrDg%3d&risl=&pid=ImgRaw&r=0" alt="" />
@@ -37,11 +41,11 @@ const Main = () => {
 						<FaLinkedin size={20} className="cursor-pointer hover:text-blue-500 transition-all dark:text-white dark:hover:text-blue-500" />
 					</div>
 					<div className="flex justify-between md:items-start items-center flex-col my-4">
-						<div className={`flex justify-center items-center gap-2 bg-primary text-white px-5 py-3 my-2 rounded-lg hover:bg-primary/80 transition-all dark:bg-white dark:text-black`}>
+						<div className={`flex justify-center items-center gap-2 bg-${themeColor} text-white px-5 py-3 my-2 rounded-lg hover:bg-${themeColor}/50 transition-all dark:bg-white dark:text-black`}>
 							<a href="mailto:tienphatng.693@gmail.com"><BiMailSend size={22} /></a>
 							<a href="mailto:tienphatng.693@gmail.com" className="text-md">tienphatng.693@gmail.com</a>
 						</div>
-						<div className="flex justify-center items-center gap-2 bg-primary text-white px-5 py-3 my-2 rounded-lg hover:bg-primary/80 transition-all  dark:bg-white dark:text-black">
+						<div className={`flex justify-center items-center gap-2 bg-${themeColor} text-white px-5 py-3 my-2 rounded-lg hover:bg-${themeColor}/50 transition-all  dark:bg-white dark:text-black`}>
 							<a href="tel:+84344248396"><AiOutlinePhone size={22} /> </a>
 							<a href="tel:+84344248396" className="text-md">(+84) 0344248396</a>
 						</div>
