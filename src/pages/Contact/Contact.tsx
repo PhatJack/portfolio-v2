@@ -30,10 +30,9 @@ const Contact = () => {
 						data-aos="zoom-in-up"
 						data-aos-easing="linear"
 						data-aos-duration="500"
-
 					>
 						<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">Name</label>
-						<input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" name="name" />
+						<input className="border-2 rounded-lg p-3 flex border-gray-300" required type="text" name="name" />
 					</div>
 					<div className="flex flex-col py-2"
 						data-aos="zoom-in-up"
@@ -43,7 +42,7 @@ const Contact = () => {
 						<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">
 							Phone Number
 						</label>
-						<input className="border-2 rounded-lg p-3 flex border-gray-300" type="tel" name="phone" />
+						<input className="border-2 rounded-lg p-3 flex border-gray-300" required type="tel" name="phone" />
 					</div>
 				</div>
 				<div className="flex flex-col py-2"
@@ -52,7 +51,7 @@ const Contact = () => {
 					data-aos-duration="700"
 				>
 					<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">Email</label>
-					<input className="border-2 rounded-lg p-3 flex border-gray-300" type="email" name="email" />
+					<input className="border-2 rounded-lg p-3 flex border-gray-300" required type="email" name="email" />
 				</div>
 				<div className="flex flex-col py-2"
 					data-aos="zoom-in-up"
@@ -60,7 +59,7 @@ const Contact = () => {
 					data-aos-duration="900"
 				>
 					<label className="uppercase text-sm py-2 text-black dark:text-white" htmlFor="">Subject</label>
-					<input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" name="subject" />
+					<input className="border-2 rounded-lg p-3 flex border-gray-300" required type="text" name="subject" />
 				</div>
 				<div className="flex flex-col py-2"
 					data-aos="zoom-in-up"
